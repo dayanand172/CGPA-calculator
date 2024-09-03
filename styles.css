@@ -9,17 +9,19 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    box-sizing: border-box; /* Ensure padding doesn't affect overall width */
 }
 
 /* Container Styling */
 .container {
     background: #ffffff;
-    padding: 20px 40px;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 90%;
     max-width: 600px;
     text-align: center;
+    box-sizing: border-box; /* Ensures padding doesn't exceed width */
 }
 
 /* Header Styling */
@@ -34,6 +36,7 @@ h1 {
     display: flex;
     gap: 10px;
     margin-bottom: 10px;
+    flex-wrap: wrap; /* Allows items to wrap if needed */
 }
 
 .subject-input input {
@@ -42,6 +45,7 @@ h1 {
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1rem;
+    box-sizing: border-box;
 }
 
 /* Invalid Input Highlighting */
@@ -86,4 +90,37 @@ footer {
     margin-top: 20px;
     font-size: 0.9rem;
     color: #666;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8em; /* Adjust heading size */
+    }
+
+    .container {
+        padding: 15px; /* Reduce padding on smaller screens */
+    }
+
+    button {
+        padding: 10px 15px; /* Adjust button padding */
+        font-size: 0.9rem; /* Reduce font size */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em; /* Further adjust heading size */
+    }
+
+    .subject-input {
+        flex-direction: column; /* Stack input and button vertically */
+        gap: 5px; /* Reduce gap */
+    }
+
+    button {
+        width: 100%; /* Make button full-width */
+        padding: 10px; /* Adjust padding */
+        font-size: 0.9rem; /* Reduce font size */
+    }
 }
